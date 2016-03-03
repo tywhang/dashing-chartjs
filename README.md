@@ -37,12 +37,45 @@ class Dashing.MyCharts extends Dashing.Chartjs
 Now you have access to all the functions!!!
 
 ## Example
-###### Let's create a simple line chart!
+#### Let's create a simple line chart!
 
 ##### 1. Add your html
+###### widgets/example/example.html
+`<canvas id="myChart" width="400" height="300"></canvas>`
 
-<img src="http://i.imgur.com/VJDvbwV.png" width="400">
+##### 2. Call the lineChart function and pass in parameters
+###### widgets/example/example.coffee
+```
+class Dashing.Charts extends Dashing.Chartjs
+  ready: ->
+    @lineChart 'myChart',
+      ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
+      [
+        label: 'Number of pushups'
+        colorName: 'blue'
+        data: [10, 39, 20, 49, 87]
+      ]
+```
 
+##### 3. Awe at your beautiful chart
+<div><img src="http://i.imgur.com/VJDvbwV.png" width="400"></div>
+
+#### Displaying multiple data in one chart is a breeze too!
+```
+@lineChart 'myChart',
+  ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
+  [{
+      label: 'Number of pushups'
+      colorName: 'blue'
+      data: [10, 39, 20, 49, 87]
+    }, {
+      label: 'Number of pullups'
+      colorName: 'red'
+      data: [3, 2, 10, 12, 20]
+    }
+  ]
+```
+<div><img src="http://i.imgur.com/mWlAndA.png" width="400"></div>
 
 
 ## Usage
