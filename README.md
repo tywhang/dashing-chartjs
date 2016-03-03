@@ -1,6 +1,6 @@
 # dashing-chartjs
 
-###### An easy interface to use all of chartjs.org's charts.
+###### An easy interface to use all of [chartjs.org](http://www.chartjs.org/)'s charts.
 
 Inspired by my own pain and suffering of trying to add a simple chart to [dashing](http://dashing.io)
 
