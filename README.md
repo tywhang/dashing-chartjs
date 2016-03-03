@@ -46,10 +46,10 @@ Now you have access to all the functions!!!
 ##### 2. Call the lineChart function and pass in parameters
 ###### widgets/example/example.coffee
 ```
-class Dashing.Charts extends Dashing.Chartjs
+class Dashing.Example extends Dashing.Chartjs
   ready: ->
-    @lineChart 'myChart' # The ID of your html element
-      ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"] # Horizontal labels
+    @lineChart 'myChart', # The ID of your html element
+      ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"], # Horizontal labels
       [
         label: 'Number of pushups' # Text displayed when hovered
         colorName: 'blue' # Color of data
@@ -62,8 +62,8 @@ class Dashing.Charts extends Dashing.Chartjs
 
 #### Displaying multiple data in one chart is a breeze too!
 ```
-@lineChart 'myChart' # Horizontal labels
-  ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
+@lineChart 'myChart', # Horizontal labels
+  ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
   [{
       # First data points
       label: 'Number of pushups'
@@ -82,3 +82,52 @@ class Dashing.Charts extends Dashing.Chartjs
 
 ## Usage
 
+### Line Chart
+
+`@lineChart(elementId, horizontalLabels, dataSets)`
+
+```
+class Dashing.LineChart extends Dashing.Chartjs
+  ready: ->
+    @lineChart 'myChart',
+      ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
+      [
+        label: 'Number of pushups'
+        colorName: 'blue'
+        data: [10, 39, 20, 49, 87]
+      ]
+```
+<div><img src="http://i.imgur.com/VJDvbwV.png" width="400"></div>
+
+### Bar Charts
+
+`@barChart(elementId, horizontalLabels, dataSets)`
+
+```
+class Dashing.Charts extends Dashing.Chartjs
+  ready: ->
+    @lineChart 'myChart',
+      ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"],
+      [
+        label: 'Customer count'
+        colorName: 'blue'
+        data: [210, 339, 220, 494, 109]
+      ]
+```
+<div><img src="http://i.imgur.com/1xy9d9u.png" width="400"></div>
+
+### Radar Charts
+
+`@radarChart(elementId, horizontalLabels, dataSets)`
+
+```
+class Dashing.Charts extends Dashing.Chartjs
+  ready: ->
+    @radarChart 'myChart',
+      ["Crossfit", "Yoga", "Weight Lifting", "Running", "Swimming", "Watching TV"],
+      [
+        label: 'Favorite Workout'
+        colorName: 'yellow'
+        data: [210, 339, 220, 234, 311, 494]
+      ]
+```
