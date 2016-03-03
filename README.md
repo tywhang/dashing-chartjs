@@ -87,7 +87,7 @@ class Dashing.Example extends Dashing.Chartjs
 `@lineChart(elementId, horizontalLabels, dataSets)`
 
 ```
-class Dashing.LineChart extends Dashing.Chartjs
+class Dashing.Line extends Dashing.Chartjs
   ready: ->
     @lineChart 'myChart',
       ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
@@ -104,7 +104,7 @@ class Dashing.LineChart extends Dashing.Chartjs
 `@barChart(elementId, horizontalLabels, dataSets)`
 
 ```
-class Dashing.Charts extends Dashing.Chartjs
+class Dashing.Bar extends Dashing.Chartjs
   ready: ->
     @lineChart 'myChart',
       ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"],
@@ -121,7 +121,7 @@ class Dashing.Charts extends Dashing.Chartjs
 `@radarChart(elementId, horizontalLabels, dataSets)`
 
 ```
-class Dashing.Charts extends Dashing.Chartjs
+class Dashing.Radar extends Dashing.Chartjs
   ready: ->
     @radarChart 'myChart',
       ["Crossfit", "Yoga", "Weight Lifting", "Running", "Swimming", "Watching TV"],
@@ -132,3 +132,81 @@ class Dashing.Charts extends Dashing.Chartjs
       ]
 ```
 <div><img src="http://i.imgur.com/2xG1kFp.png" width="400"></div>
+
+### Polar Area Charts
+
+`@polarAreaChart(elementId, dataSets)`
+
+```
+class Dashing.Polar extends Dashing.Chartjs
+  ready: ->
+    @polarAreaChart("otherChart",
+      [{
+        value: 300
+        colorName: 'red'
+        label: "Red"
+      }, {
+        value: 50
+        colorName: 'green'
+        label: "Green"
+      }, {
+        value: 88
+        colorName: 'yellow'
+        label: "Yellow"
+      }])
+```
+<div><img src="http://i.imgur.com/pW1SlcB.png" width="400"></div>
+
+### Pie Charts
+
+`@pieChart(elementId, dataSets)`
+
+```
+class Dashing.Pie extends Dashing.Chartjs
+  ready: ->
+    @pieChart("otherChart",
+      [{
+        value: 13
+        colorName: 'red'
+        label: "Pumpkim"
+      }, {
+        value: 32
+        colorName: 'green'
+        label: "Apple"
+      }, {
+        value: 40
+        colorName: 'yellow'
+        label: "Pizza"
+      }, {
+        value: 20
+        colorName: 'gray'
+        label: "Rhubarb"
+      }])
+```
+
+<div><img src="http://i.imgur.com/mYeuXcp.png" width="400"></div>
+
+### Doughnut Charts
+
+`@doughnutChart(elementId, dataSets)`
+
+```
+class Dashing.Doughnut extends Dashing.Chartjs
+  ready: ->
+    @doughnutChart("otherChart",
+      [{
+        value: 20
+        colorName: 'green'
+        label: "Apple Fritter"
+      }, {
+        value: 13
+        colorName: 'blue'
+        label: "Chocolate"
+      }, {
+        value: 12
+        colorName: 'darkgray'
+        label: "Maple"
+      }])
+```
+
+<div><img src="http://i.imgur.com/iNILDun.png" width="400"></div>
