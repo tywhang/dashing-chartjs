@@ -221,3 +221,8 @@ class Dashing.Doughnut extends Dashing.Chartjs
 ```
 
 <div><img src="http://i.imgur.com/iNILDun.png" width="400"></div>
+
+## Installation
+
+###### Currently available colors
+blue | cyan | darkgray | gray | green | lightgray | magenta | red | yellow
