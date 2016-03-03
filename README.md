@@ -37,6 +37,12 @@ class Dashing.MyCharts extends Dashing.Chartjs
 Now you have access to all the functions!!!
 
 ## Example
+###### Let's create a simple line chart!
+
+##### 1. Add your html
+
+<img src="http://i.imgur.com/VJDvbwV.png" width="400">
+
 
 
 ## Usage
