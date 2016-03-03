@@ -4,6 +4,17 @@
 
 Inspired by my own pain and suffering of trying to add a simple chart to [dashing](http://dashing.io)
 
+#### Make awesome charts like these:
+<div>
+  <img src="http://i.imgur.com/pW1SlcB.png" height="200">
+  <img src="http://i.imgur.com/1xy9d9u.png" height="200">
+  <img src="http://i.imgur.com/iNILDun.png" height="200">
+</div>
+<div>
+  <img src="http://i.imgur.com/VJDvbwV.png" height="200">
+  <img src="http://i.imgur.com/mYeuXcp.png" height="200">
+  <img src="http://i.imgur.com/2xG1kFp.png" height="200">
+</div>
 ## Installation
 ##### 1. Import Chartjs library
 In `dashboards/layout.erb`, add this script tag:
