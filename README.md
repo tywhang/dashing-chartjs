@@ -131,3 +131,4 @@ class Dashing.Charts extends Dashing.Chartjs
         data: [210, 339, 220, 234, 311, 494]
       ]
 ```
+<div><img src="http://i.imgur.com/2xG1kFp.png" width="400"></div>
