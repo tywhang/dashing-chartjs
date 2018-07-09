@@ -2,30 +2,30 @@ class Dashing.Chartjs extends Dashing.Widget
 
   polarAreaChart: (id, datasets) ->
     data = datasets.map (d) => @merge(this.circleColor(d.colorName), label: d.label, value: d.value)
-    new Chart(document.getElementById(id).getContext("2d")).PolarArea(data)
+    new Chart(document.getElementById(id).getContext("2d"), { type: 'polarArea', data: data })
 
   pieChart: (id, datasets) ->
     data = datasets.map (d) => @merge(this.circleColor(d.colorName), label: d.label, value: d.value)
-    new Chart(document.getElementById(id).getContext("2d")).Pie(data)
+    new Chart(document.getElementById(id).getContext("2d"), { type: 'pie', data: data })
 
   doughnutChart: (id, datasets) ->
     data = datasets.map (d) => @merge(this.circleColor(d.colorName), label: d.label, value: d.value)
-    new Chart(document.getElementById(id).getContext("2d")).Doughnut(data)
+    new Chart(document.getElementById(id).getContext("2d"), { type: 'doughnut', data: data })
 
   lineChart: (id, labels, datasets) ->
     data = @merge labels: labels,
       datasets: datasets.map (d) => @merge(this.color(d.colorName), label: d.label, data: d.data)
-    new Chart(document.getElementById(id).getContext("2d")).Line(data)
+    new Chart(document.getElementById(id).getContext("2d"), { type: 'line', data: data })
 
   barChart: (id, labels, datasets) ->
     data = @merge labels: labels,
-      datasets: datasets.map (d) => @merge(this.color(d.colorName), label: d.label, data: d.data)
-    new Chart(document.getElementById(id).getContext("2d")).Bar(data)
+      datasets: datasets.map (d) => @merge(label: d.label, data: d.data)
+    new Chart(document.getElementById(id).getContext("2d"), { type: 'bar', data: data })
 
   radarChart: (id, labels, datasets) ->
     data = @merge labels: labels,
       datasets: datasets.map (d) => @merge(this.color(d.colorName), label: d.label, data: d.data)
-    new Chart(document.getElementById(id).getContext("2d")).Radar(data)
+    new Chart(document.getElementById(id).getContext("2d"), { type: 'radar', data: data })
 
   merge: (xs...) =>
     if xs?.length > 0
@@ -45,12 +45,12 @@ class Dashing.Chartjs extends Dashing.Widget
     yellow: "253, 180, 92"
 
   color: (colorName) ->
-    fillColor: "rgba(#{ @colorCode()[colorName] }, 0.2)"
-    strokeColor: "rgba(#{ @colorCode()[colorName] }, 1)"
-    pointColor: "rgba(#{ @colorCode()[colorName] }, 1)"
+    backgroundColor: "rgba(#{ @colorCode()[colorName] }, 0.2)"
+    borderColor: "rgba(#{ @colorCode()[colorName] }, 1)"
+    pointBackgroundColor: "rgba(#{ @colorCode()[colorName] }, 1)"
     pointStrokeColor: "#fff"
-    pointHighlightFill: "#fff"
-    pointHighlightStroke: "rgba(#{ @colorCode()['blue'] },0.8)"
+    pointHoverBackgroundColor: "#fff"
+    pointHoverBorderColor: "rgba(#{ @colorCode()['blue'] },0.8)"
 
   circleColor: (colorName) ->
     color: "rgba(#{ @colorCode()[colorName] }, 1)"

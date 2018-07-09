@@ -19,7 +19,7 @@ Inspired by my own pain and suffering of trying to add a simple chart to [smashi
 ##### 1. Import Chartjs library
 In `dashboards/layout.erb`, add this script tag:
 
-`<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>`
+`<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>`
 
 before this script tag:
 
@@ -85,8 +85,7 @@ class Dashing.Example extends Dashing.Chartjs
       label: 'Number of pullups'
       colorName: 'red'
       data: [3, 2, 10, 12, 20]
-    }
-  ]
+    }]
 ```
 <div><img src="http://i.imgur.com/mWlAndA.png" width="400"></div>
 
@@ -117,11 +116,11 @@ class Dashing.Line extends Dashing.Chartjs
 ```
 class Dashing.Bar extends Dashing.Chartjs
   ready: ->
-    @lineChart 'myChart',
+    @barChart 'myChart',
       ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"],
       [
         label: 'Customer count'
-        colorName: 'blue'
+        colorName: 'ty=='
         data: [210, 339, 220, 494, 109]
       ]
 ```
@@ -151,20 +150,10 @@ class Dashing.Radar extends Dashing.Chartjs
 ```
 class Dashing.Polar extends Dashing.Chartjs
   ready: ->
-    @polarAreaChart("otherChart",
-      [{
-        value: 300
-        colorName: 'red'
-        label: "Red"
-      }, {
-        value: 50
-        colorName: 'green'
-        label: "Green"
-      }, {
-        value: 88
-        colorName: 'yellow'
-        label: "Yellow"
-      }])
+    @polarAreaChart("myChart",
+      ["Red", "Green", "Yellow"]
+      ["red", "green", "yellow"]
+      [300, 50, 88])
 ```
 <div><img src="http://i.imgur.com/pW1SlcB.png" width="400"></div>
 
@@ -175,24 +164,10 @@ class Dashing.Polar extends Dashing.Chartjs
 ```
 class Dashing.Pie extends Dashing.Chartjs
   ready: ->
-    @pieChart("otherChart",
-      [{
-        value: 13
-        colorName: 'red'
-        label: "Pumpkim"
-      }, {
-        value: 32
-        colorName: 'green'
-        label: "Apple"
-      }, {
-        value: 40
-        colorName: 'yellow'
-        label: "Pizza"
-      }, {
-        value: 20
-        colorName: 'gray'
-        label: "Rhubarb"
-      }])
+    @pieChart("myChart",
+      ["Pumpkin", "Apple", "Pizza", "Rhubard"]
+      ["red", "green", "yellow", "gray"]
+      [13, 32, 40, 20])
 ```
 
 <div><img src="http://i.imgur.com/mYeuXcp.png" width="400"></div>
@@ -204,20 +179,10 @@ class Dashing.Pie extends Dashing.Chartjs
 ```
 class Dashing.Doughnut extends Dashing.Chartjs
   ready: ->
-    @doughnutChart("otherChart",
-      [{
-        value: 20
-        colorName: 'green'
-        label: "Apple Fritter"
-      }, {
-        value: 13
-        colorName: 'blue'
-        label: "Chocolate"
-      }, {
-        value: 12
-        colorName: 'darkgray'
-        label: "Maple"
-      }])
+    @doughnutChart("myChart",
+      ["Apple Fritter", "Chocolate", "Maple"]
+      ["green", "blue", "darkgray"]
+      [20, 13, 12])
 ```
 
 <div><img src="http://i.imgur.com/iNILDun.png" width="400"></div>
