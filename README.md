@@ -1,8 +1,8 @@
-# dashing-chartjs
+# smashing-chartjs
 
 ###### An easy interface to use all of [chartjs.org](http://www.chartjs.org/)'s charts.
 
-Inspired by my own pain and suffering of trying to add a simple chart to [dashing](http://dashing.io)
+Inspired by my own pain and suffering of trying to add a simple chart to [smashing](https://smashing.github.io/)
 
 #### Make awesome charts like these:
 <div>
