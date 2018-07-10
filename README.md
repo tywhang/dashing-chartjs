@@ -60,8 +60,8 @@ Now you have access to all the functions!!!
 class Dashing.Example extends Dashing.Chartjs
   ready: ->
     @lineChart 'myChart', # The ID of your html element
-      ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"], # Horizontal labels
-      [
+      labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
+      datasets: [
         label: 'Number of pushups' # Text displayed when hovered
         colorName: 'blue' # Color of data
         data: [10, 39, 20, 49, 87] # Vertical points
@@ -73,19 +73,19 @@ class Dashing.Example extends Dashing.Chartjs
 
 #### Displaying multiple data in one chart is a breeze too!
 ```
-@lineChart 'myChart', # Horizontal labels
-  ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
-  [{
-      # First data points
-      label: 'Number of pushups'
-      colorName: 'blue'
-      data: [10, 39, 20, 49, 87]
-    }, {
-      # Second data points
-      label: 'Number of pullups'
-      colorName: 'red'
-      data: [3, 2, 10, 12, 20]
-    }]
+@lineChart 'myChart', # The ID of your html element
+  labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
+  datasets: [{
+    # First data points
+    label: 'Number of pushups'
+    colorName: 'blue'
+    data: [10, 39, 20, 49, 87]
+  }, {
+    # Second data points
+    label: 'Number of pullups'
+    colorName: 'red'
+    data: [3, 2, 10, 12, 20]
+  }]
 ```
 <div><img src="http://i.imgur.com/mWlAndA.png" width="400"></div>
 
@@ -100,8 +100,8 @@ class Dashing.Example extends Dashing.Chartjs
 class Dashing.Line extends Dashing.Chartjs
   ready: ->
     @lineChart 'myChart',
-      ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
-      [
+      labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"],
+      datasets: [
         label: 'Number of pushups'
         colorName: 'blue'
         data: [10, 39, 20, 49, 87]
@@ -117,8 +117,8 @@ class Dashing.Line extends Dashing.Chartjs
 class Dashing.Bar extends Dashing.Chartjs
   ready: ->
     @barChart 'myChart',
-      ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"],
-      [
+      labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"],
+      datasets: [
         label: 'Customer count'
         colorName: 'ty=='
         data: [210, 339, 220, 494, 109]
@@ -134,8 +134,8 @@ class Dashing.Bar extends Dashing.Chartjs
 class Dashing.Radar extends Dashing.Chartjs
   ready: ->
     @radarChart 'myChart',
-      ["Crossfit", "Yoga", "Weight Lifting", "Running", "Swimming", "Watching TV"],
-      [
+      labels: ["Crossfit", "Yoga", "Weight Lifting", "Running", "Swimming", "Watching TV"],
+      datasets: [
         label: 'Favorite Workout'
         colorName: 'yellow'
         data: [210, 339, 220, 234, 311, 494]
@@ -151,9 +151,9 @@ class Dashing.Radar extends Dashing.Chartjs
 class Dashing.Polar extends Dashing.Chartjs
   ready: ->
     @polarAreaChart("myChart",
-      ["Red", "Green", "Yellow"]
-      ["red", "green", "yellow"]
-      [300, 50, 88])
+      labels: ["Red", "Green", "Yellow"]
+      colors: ["red", "green", "yellow"]
+      datasets: [300, 50, 88])
 ```
 <div><img src="http://i.imgur.com/pW1SlcB.png" width="400"></div>
 
@@ -165,9 +165,9 @@ class Dashing.Polar extends Dashing.Chartjs
 class Dashing.Pie extends Dashing.Chartjs
   ready: ->
     @pieChart("myChart",
-      ["Pumpkin", "Apple", "Pizza", "Rhubard"]
-      ["red", "green", "yellow", "gray"]
-      [13, 32, 40, 20])
+      labels: ["Pumpkin", "Apple", "Pizza", "Rhubard"]
+      colors: ["red", "green", "yellow", "gray"]
+      datasets: [13, 32, 40, 20])
 ```
 
 <div><img src="http://i.imgur.com/mYeuXcp.png" width="400"></div>
@@ -180,9 +180,9 @@ class Dashing.Pie extends Dashing.Chartjs
 class Dashing.Doughnut extends Dashing.Chartjs
   ready: ->
     @doughnutChart("myChart",
-      ["Apple Fritter", "Chocolate", "Maple"]
-      ["green", "blue", "darkgray"]
-      [20, 13, 12])
+      labels: ["Apple Fritter", "Chocolate", "Maple"]
+      colors: ["green", "blue", "darkgray"]
+      datasets: [20, 13, 12])
 ```
 
 <div><img src="http://i.imgur.com/iNILDun.png" width="400"></div>
