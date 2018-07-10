@@ -1,30 +1,30 @@
 class Dashing.Chartjs extends Dashing.Widget
 
-  polarAreaChart: (id, datasets) ->
-    data = datasets.map (d) => @merge(this.circleColor(d.colorName), label: d.label, value: d.value)
+  polarAreaChart: (id, {labels, colors, datasets}) ->
+    data = @merge labels: labels, datasets: [@merge data: datasets, @colors(colors)]
     new Chart(document.getElementById(id).getContext("2d"), { type: 'polarArea', data: data })
 
-  pieChart: (id, datasets) ->
-    data = datasets.map (d) => @merge(this.circleColor(d.colorName), label: d.label, value: d.value)
+  pieChart: (id, {labels, colors, datasets}) ->
+    data = @merge labels: labels, datasets: [@merge data: datasets, @colors(colors)]
     new Chart(document.getElementById(id).getContext("2d"), { type: 'pie', data: data })
 
-  doughnutChart: (id, datasets) ->
-    data = datasets.map (d) => @merge(this.circleColor(d.colorName), label: d.label, value: d.value)
+  doughnutChart: (id, {labels, colors, datasets}) ->
+    data = @merge labels: labels, datasets: [@merge data: datasets, @colors(colors)]
     new Chart(document.getElementById(id).getContext("2d"), { type: 'doughnut', data: data })
 
-  lineChart: (id, labels, datasets) ->
+  lineChart: (id, {labels, datasets}) ->
     data = @merge labels: labels,
-      datasets: datasets.map (d) => @merge(this.color(d.colorName), label: d.label, data: d.data)
+      datasets: datasets.map (d) => @merge(@color(d.colorName), label: d.label, data: d.data)
     new Chart(document.getElementById(id).getContext("2d"), { type: 'line', data: data })
 
-  barChart: (id, labels, datasets) ->
+  barChart: (id, {labels, datasets}) ->
     data = @merge labels: labels,
-      datasets: datasets.map (d) => @merge(label: d.label, data: d.data)
+      datasets: datasets.map (d) => @merge(@color(d.colorName), label: d.label, data: d.data)
     new Chart(document.getElementById(id).getContext("2d"), { type: 'bar', data: data })
 
-  radarChart: (id, labels, datasets) ->
+  radarChart: (id, {labels, datasets}) ->
     data = @merge labels: labels,
-      datasets: datasets.map (d) => @merge(this.color(d.colorName), label: d.label, data: d.data)
+      datasets: datasets.map (d) => @merge(@color(d.colorName), label: d.label, data: d.data)
     new Chart(document.getElementById(id).getContext("2d"), { type: 'radar', data: data })
 
   merge: (xs...) =>
@@ -44,14 +44,34 @@ class Dashing.Chartjs extends Dashing.Widget
     red: "247, 70, 74"
     yellow: "253, 180, 92"
 
+  colors: (colorNames) ->
+    backgroundColor: colorNames.map (colorName) => @backgroundColor(colorName)
+    borderColor: colorNames.map (colorName) => @borderColor(colorName)
+    borderWidth: colorNames.map (colorName) -> 1
+    pointBackgroundColor: colorNames.map (colorName) => @pointBackgroundColor(colorName)
+    pointBorderColor: colorNames.map (colorName) => @pointBorderColor(colorName)
+    pointHoverBackgroundColor: colorNames.map (colorName) => @pointHoverBackgroundColor(colorName)
+    pointHoverBorderColor: colorNames.map (colorName) => @pointHoverBorderColor(colorName)
+
   color: (colorName) ->
-    backgroundColor: "rgba(#{ @colorCode()[colorName] }, 0.2)"
-    borderColor: "rgba(#{ @colorCode()[colorName] }, 1)"
-    pointBackgroundColor: "rgba(#{ @colorCode()[colorName] }, 1)"
-    pointStrokeColor: "#fff"
-    pointHoverBackgroundColor: "#fff"
-    pointHoverBorderColor: "rgba(#{ @colorCode()['blue'] },0.8)"
+    backgroundColor: @backgroundColor(colorName)
+    borderColor: @borderColor(colorName)
+    borderWidth: 1
+    pointBackgroundColor: @pointBackgroundColor(colorName)
+    pointBorderColor: @pointBorderColor(colorName)
+    pointHoverBackgroundColor: @pointHoverBackgroundColor()
+    pointHoverBorderColor: @pointBackgroundColor(colorName)
+
+  backgroundColor: (colorName) -> "rgba(#{ @colorCode()[colorName] }, 0.2)"
+  borderColor: (colorName) -> "rgba(#{ @colorCode()[colorName] }, 1)"
+  pointBackgroundColor: (colorName) -> "rgba(#{ @colorCode()[colorName] }, 1)"
+  pointBorderColor: (colorName) -> "rgba(#{ @colorCode()[colorName] }, 1)"
+  pointHoverBackgroundColor: -> "fff"
+  pointHoverBorderColor: (colorName) -> "rgba(#{ @colorCode()[colorName] }, 0.8)"
 
   circleColor: (colorName) ->
-    color: "rgba(#{ @colorCode()[colorName] }, 1)"
-    highlight: "rgba(#{ @colorCode()[colorName] }, 0.8)"
+    backgroundColor: "rgba(#{ @colorCode()[colorName] }, 0.2)"
+    borderColor: "rgba(#{ @colorCode()[colorName] }, 1)"
+    borderWidth: 1
+    hoverBackgroundColor: "#fff"
+    hoverBorderColor: "rgba(#{ @colorCode()['blue'] },0.8)"
