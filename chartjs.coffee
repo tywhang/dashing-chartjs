@@ -1,31 +1,29 @@
 class Dashing.Chartjs extends Dashing.Widget
 
-  polarAreaChart: (id, { labels, colors, datasets, options={} }) ->
+  constructor: ->
+    super
+    @id = @get("id")
+    @type = @get("type")
+    @labels = @get("labels") && @get("labels").split(",")
+    @datasets = @get("datasets") && @get("datasets").split(",")
+    @colorNames = @get("colornames") && @get("colornames").split(",")
+
+  ready: ->
+    switch @type
+      when 'pie', 'doughnut', 'polarArea'
+        @circularChart @id, type: @type, labels: @labels, colors: @colorNames, datasets: @datasets
+      when 'line', 'bar', 'radar'
+        @linearChart @id, type: @type, labels: @labels, colors: @colorNames, datasets: @datasets
+      else
+        return
+
+  circularChart: (id, { type, labels, colors, datasets, options={} }) ->
     data = @merge labels: labels, datasets: [@merge data: datasets, @colors(colors)]
-    new Chart(document.getElementById(id).getContext("2d"), { type: 'polarArea', data: data }, options)
+    new Chart(document.getElementById(id), { type: type, data: data }, options)
 
-  pieChart: (id, { labels, colors, datasets, options={} }) ->
-    data = @merge labels: labels, datasets: [@merge data: datasets, @colors(colors)]
-    new Chart(document.getElementById(id).getContext("2d"), { type: 'pie', data: data }, options)
-
-  doughnutChart: (id, { labels, colors, datasets, options={} }) ->
-    data = @merge labels: labels, datasets: [@merge data: datasets, @colors(colors)]
-    new Chart(document.getElementById(id).getContext("2d"), { type: 'doughnut', data: data }, options)
-
-  lineChart: (id, { labels, datasets, options={} }) ->
-    data = @merge labels: labels,
-      datasets: datasets.map (d) => @merge(@color(d.colorName), label: d.label, data: d.data)
-    new Chart(document.getElementById(id).getContext("2d"), { type: 'line', data: data }, options)
-
-  barChart: (id, { labels, datasets, options={} }) ->
-    data = @merge labels: labels,
-      datasets: datasets.map (d) => @merge(@color(d.colorName), label: d.label, data: d.data)
-    new Chart(document.getElementById(id).getContext("2d"), { type: 'bar', data: data }, options)
-
-  radarChart: (id, { labels, datasets, options={} }) ->
-    data = @merge labels: labels,
-      datasets: datasets.map (d) => @merge(@color(d.colorName), label: d.label, data: d.data)
-    new Chart(document.getElementById(id).getContext("2d"), { type: 'radar', data: data }, options)
+  linearChart: (id, { type, labels, colors, datasets, options={} }) ->
+    data = @merge labels: labels, datasets: [@merge(@colors(colors), data: datasets)]
+    new Chart(document.getElementById(id), { type: type, data: data }, options)
 
   merge: (xs...) =>
     if xs?.length > 0
