@@ -25,7 +25,9 @@ before this script tag:
 
 `<script type="text/javascript" src="/assets/application.js"></script>`
 
-##### 2. Import Dashing.Chartjs Widget
+##### 2. Install smashing-chartjs
+
+Run in terminal in project directory
 
 `smashing install b4a67180da816eb0695f`
 
