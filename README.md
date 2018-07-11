@@ -4,6 +4,11 @@
 
 Inspired by my own pain and suffering of trying to add a simple chart to [smashing](https://smashing.github.io/)
 
+
+Full example: https://github.com/tywhang/smashing-chartjs-example
+Live example: https://smashing-chartjs.herokuapp.com/
+
+
 #### Make awesome charts like these:
 <div>
   <img src="http://i.imgur.com/pW1SlcB.png" height="200">
