@@ -157,3 +157,4 @@ blue | cyan | darkgray | gray | green | lightgray | magenta | red | yellow
 4. Ability to update via curl.
 5. Add all new v2 charts.
 6. Add all new v2 animations.
+7. Integration with Patternomaly (https://github.com/ashiguruma/patternomaly)
