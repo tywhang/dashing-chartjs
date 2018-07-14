@@ -148,3 +148,12 @@ Run in terminal in project directory
 
 ###### Currently available colors
 blue | cyan | darkgray | gray | green | lightgray | magenta | red | yellow
+
+
+#### Upcoming Features
+1. Ability to specify all options of chartjs.
+2. Integration with Jobs.
+3. Default colors.
+4. Ability to update via curl.
+5. Add all new v2 charts.
+6. Add all new v2 animations.
