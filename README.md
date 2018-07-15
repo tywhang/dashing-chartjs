@@ -147,7 +147,7 @@ Run in terminal in project directory
 ## Colors
 
 ###### Currently available colors
-blue | cyan | darkgray | gray | green | lightgray | magenta | red | yellow
+aqua | black | blue | cyan | darkgray | fuschia | gray | green | lightgray | magenta | maroon | navy | olive | purple | red | silver | teal | white | yellow
 
 
 #### Upcoming Features
