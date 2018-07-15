@@ -1,0 +1,108 @@
+.navbar {
+    position: relative;
+    z-index: 1;
+
+    > .container {
+        position: relative;
+    }
+}
+.navbar-nav {
+    .nav-link {
+        font-size: $navbar-nav-link-font-size;
+        font-family: $navbar-nav-link-font-family;
+        font-weight: $navbar-nav-link-font-weight;
+        text-transform: $navbar-nav-link-text-transform;
+        letter-spacing: $navbar-nav-link-letter-spacing;
+        @if $enable-transitions {
+            transition: $navbar-transition;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) { 
+    .navbar-nav {
+        .nav-item {
+            margin-right: .5rem;
+        }
+        .nav-link {
+            padding-top: $navbar-nav-link-padding-y;
+            padding-bottom: $navbar-nav-link-padding-y;
+            border-radius: $navbar-nav-link-border-radius;
+        }
+
+        .nav-link-icon {
+            border-radius: $navbar-nav-link-border-radius;
+        }
+
+        // Dropdown menu 
+
+        .dropdown-menu {
+            opacity: 0;
+
+            &.show {
+                animation: show-navbar-dropdown .2s ease forwards;
+            }
+
+            .list-group-item {
+                border-radius: $border-radius;
+                transform: scale(1);
+                @include transition($transition-base);
+                border: 1px solid transparent;
+
+                &:hover {
+                    background-color: $list-group-hover-bg;
+                    border-color: rgba(3,27,78,.1);
+                    box-shadow: 0 2px 4px rgba(3,27,78,.06);
+                    position: relative;
+                    transform: scale(1.05);
+                    z-index: 11;
+                }
+            }
+        }
+    }
+}
+
+// Transparent navbar
+
+@include media-breakpoint-up(lg) { 
+    .navbar-transparent {
+        position: absolute; 
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        background-color: transparent !important;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .navbar-transparent.border-bottom {
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+@include media-breakpoint-down(lg) { 
+    .navbar-nav {
+        .nav-link {
+            padding: .5rem 0;
+        }
+    }
+
+    .dropdown-menu {
+        box-shadow: none;
+    }
+}
+
+// Keyframes
+
+@keyframes show-navbar-dropdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.9);
+        transform-origin: 50% -150px;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    } 
+}

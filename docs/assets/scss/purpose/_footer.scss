@@ -1,0 +1,33 @@
+footer {
+    background-color: section-color("primary");
+}
+
+.footer {
+    .list-unstyled li a {
+        display: inline-block;
+        padding: .125rem 0;
+    }
+}
+
+.footer-dark {
+    background-color: $footer-dark-bg;
+    color: $footer-dark-color;
+
+    .heading {
+        color: $footer-dark-heading-color;
+    }
+
+    .nav .nav-item .nav-link,
+    .list-unstyled li a,
+    .footer-link {
+        color: $footer-dark-link-color;
+
+        &:hover {
+            color: $footer-dark-link-hover-color;
+        }
+    }
+
+    hr {
+        border-color: rgba(invert($footer-dark-bg), .1);
+    }
+}

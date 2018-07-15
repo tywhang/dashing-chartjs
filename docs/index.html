@@ -1,10 +1,593 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Smashing-Chartjs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+    <title>Smashing - ChartJS In progress</title>
+    <!-- Favicon -->
+    <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+    <!-- Page plugins -->
+    <link type="text/css" href="./assets/vendor/highlight/css/highlight.min.css" rel="stylesheet">
+    <link type="text/css" href="./assets/vendor/highlight/css/styles/atom-one-dark.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link type="text/css" href="./assets/css/theme.css" rel="stylesheet">
 </head>
+
 <body>
-	<p>Working site for Smashing-Chartjs</p>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark bg-dark py-3" id="navbar_main">
+            <div class="container">
+                <a class="navbar-brand mr-lg-5" href="./index.html"><strong>smashing</strong>-<strong>chartjs</strong></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_main_collapse" aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar_main_collapse">
+                    <ul class="navbar-nav align-items-lg-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./index.html">Overview</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                            <div class="dropdown-menu dropdown-menu-lg py-0">
+                                <div class="list-group list-group-flush">
+                                    <a href="./pages/pages-landing.html" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                            <img src="./assets/img/icons/dusk/svg/browser-window.svg" class="img-saturate" style="width: 60px;">
+                                            <div class="media-body ml-3">
+                                                <h2 class="heading h6 mb-1">Landing Pages</h2>
+                                                <p class="mb-0">A great point to start from.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="./pages/pages-secondary.html" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                            <img src="./assets/img/icons/dusk/svg/details-popup.svg" class="img-saturate" style="width: 60px;">
+                                            <div class="media-body ml-3">
+                                                <h2 class="heading h6 mb-1">Secondary Pages</h2>
+                                                <p class="mb-0">Build your website with these demos.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="./pages/pages-account.html" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                            <img src="./assets/img/icons/dusk/svg/form.svg" class="img-saturate" style="width: 60px;">
+                                            <div class="media-body ml-3">
+                                                <h2 class="heading h6 mb-1">Account Pages</h2>
+                                                <p class="mb-0">User account management made easy.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./docs/alerts.html" role="button">Components</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./docs/introduction.html" target="_blank">Docs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./docs/changelog.html" target="_blank">Changelog</a>
+                        </li>
+                        <li class="nav-item mr-0">
+                            <a href="https://github.com/tywhang/smashing-chartjs" target="_blank" class="nav-link d-lg-none">Github</a>
+                            <a href="https://github.com/tywhang/smashing-chartjs" target="_blank" class="btn btn-sm btn-white btn-circle btn-icon d-none d-lg-inline-flex">
+                                <span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
+                                <span class="btn-inner--text">Github</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="spotlight bg-primary bg-cover bg-size--cover" data-spotlight="fullscreen" style="background-image: url('assets/img/backgrounds/img-1.jpg');">
+            <span class="mask bg-primary alpha-4"></span>
+            <div class="spotlight-holder py-lg pt-lg-xl">
+                <div class="container d-flex align-items-center">
+                    <div class="col">
+                        <div class="row cols-xs-space align-items-end text-center text-md-left justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="text-center">
+                                    <img src="assets/img/brand/icon.png" style="width: 120px;">
+                                    <h2 class="text-white my-4">
+                      <span class="display-4 font-weight-bold">Smashing</span>
+                      <span class="d-block d-lg-inline font-weight-light">+</span>
+                      <span class="display-4 font-weight-bold">Chartjs</span>
+                    </h2>
+                                    <p class="lead text-white">Smashing-chartjs is a simple way to display chartjs on your smashing dashboard.</p>
+                                    <div class="mt-5">
+                                        <a href="#sct_features" class="btn btn-white btn-circle btn-translate--hover btn-icon mr-sm-4 scroll-me">
+                                            <span class="btn-inner--text">Get Started</span>
+                                            <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
+                                        </a>
+                                        <a href="#sct_page_examples" class="btn btn-danger btn-circle btn-translate--hover btn-icon d-none d-sm-inline-block scroll-me">
+                                            <span class="btn-inner--icon"><i class="fas fa-file-alt"></i></span>
+                                            <span class="btn-inner--text">Chart Examples</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#sct_page_examples" class="tongue tongue-bottom scroll-me"><i class="fas fa-angle-down"></i></a>
+        </section>
+        <section id="sct_page_examples" class="slice slice-lg">
+            <div class="container">
+                <div class="mb-lg text-center">
+                    <h3 class="h2 mb-3">Page Examples</h3>
+                    <div class="fluid-paragraph text-center">
+                        <p class="lead mb-0">Explore the live examples of the pre-built page layouts that were made with customization and re-usablity in mind. Let us amaze you with a level of quality in design and code never seen before in a Bootstrap theme.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div data-animate-hover="1" data-toggle="hidden">
+                            <div class="card animate-this">
+                                <div class="py-5 text-center">
+                                    <img src="assets/img/icons/dusk/svg/details-popup.svg" class="img-saturate" style="width: 100px;">
+                                </div>
+                                <div class="px-4 pb-5 text-center">
+                                    <a href="pages/pages-secondary.html" class="btn btn-sm btn-primary btn-circle">Secondary Pages</a>
+                                    <p class="mt-4">Inner pages templates designed to cover a large number of purposes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div data-animate-hover="1" data-toggle="hidden">
+                            <div class="card bg-primary animate-this">
+                                <div class="py-5 text-center">
+                                    <img src="assets/img/icons/dusk/svg/browser-window.svg" class="img-saturate" style="width: 100px;">
+                                </div>
+                                <div class="px-4 pb-5 text-center">
+                                    <a href="pages/pages-landing.html" class="btn btn-sm btn-white btn-circle">Landing Pages</a>
+                                    <p class="text-white mt-4">Make a great first impression by choosing one of these front page templates.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div data-animate-hover="1" data-toggle="hidden">
+                            <div class="card animate-this">
+                                <div class="py-5 text-center">
+                                    <img src="assets/img/icons/dusk/svg/form.svg" class="img-saturate" style="width: 100px;">
+                                </div>
+                                <div class="px-4 pb-5 text-center">
+                                    <a href="pages/pages-account.html" class="btn btn-sm btn-primary btn-circle">Account Pages</a>
+                                    <p class="mt-4">Pages designed for user registration, account administration and more.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fluid-paragraph text-center mt-5">
+                    <p><strong class="text-primary">*Good to know!</strong> You are not limited to the examples we've built. We have the liberty to choose any of the page layouts and components from the package and create your own version.</p>
+                </div>
+            </div>
+        </section>
+        <section class="slice slice-xl bg-gradient-primary has-floating-items" id="sct_call_to_action">
+            <a href="#sct_call_to_action" class="tongue tongue-up scroll-me"><i class="fas fa-angle-up"></i></a>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="text-white strong-600">Complete features at your hand</h1>
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-lg-8">
+                                <p class="lead text-white">
+                                    Purpose is a great premium UI package including all the important and needed features so you can jumpstart the hard work and get right to the website creation fast and easy with more than 100 customized Bootstrap components and 15+ integrated plugins.
+                                </p>
+                                <div class="btn-container mt-5">
+                                    <a href="https://themes.getbootstrap.com/product/purpose-website-ui-kit/" target="_blank" class="btn btn-white btn-circle btn-translate--hover px-4 mr-lg-4">Purchase now</a>
+                                    <a href="docs/plugins.html" target="_blank" class="btn btn-warning btn-circle btn-translate--hover px-4">See the Plugins</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container floating-items">
+                <div class="floating-icon"><span></span>
+                    <img src="assets/img/icons/dusk/svg/add.svg" class="img-saturate" style="width: 50px;">
+                </div>
+                <div class="floating-icon"><span></span>
+                    <img src="assets/img/icons/dusk/svg/change-theme.svg" class="img-saturate" style="width: 76px;">
+                </div>
+                <div class="floating-icon"><span></span>
+                    <img src="assets/img/icons/dusk/svg/comments.svg" class="img-saturate" style="width: 36px;">
+                </div>
+                <div class="floating-icon"><span></span>
+                    <img src="assets/img/icons/dusk/svg/download.svg" class="img-saturate" style="width: 76px;">
+                </div>
+                <div class="floating-icon"><span></span>
+                    <img src="assets/img/icons/dusk/svg/form.svg" class="img-saturate" style="width: 46px;">
+                </div>
+                <div class="floating-icon"><span></span>
+                    <img src="assets/img/icons/dusk/svg/ios-photos.svg" class="img-saturate" style="width: 36px;">
+                </div>
+            </div>
+        </section>
+        <section class="slice slice-lg pt-md-xl bg-secondary">
+            <div class="container">
+                <div class="mb-md text-center">
+                    <h3 class="h3">Customize with confidence</h3>
+                    <div class="fluid-paragraph text-center mt-4">
+                        <p class="lead lh-180">Customization has never been easier. Purpose has all the right tools in order to make your website building process a breeze.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6 class="text-primary mb-3">Customize your website using Sass</h6>
+                        <div class="frame-browser shadow-lg">
+                            <div class="frame-header d-flex align-items-center floatfix">
+                                <div class="col-6">
+                                    <span class="dot bg-red"></span>
+                                    <span class="dot bg-orange"></span>
+                                    <span class="dot bg-blue"></span>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <small class="text-muted">SCSS</small>
+                                </div>
+                            </div>
+                            <div class="frame-body">
+                                <pre class="highlight css"><code>
+/* Insert your brand's colors and the whole theme will adapt */
+
+$primary:       #510FA8;
+$secondary:     #f5f5fd;
+$success:       $green;
+$info:          $teal;
+$warning:       $orange;
+$danger:        $red;
+</code></pre>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <p>After changing the Sass variables, simply rung the <code>gulp</code> command from your terminal and you're done. <a href="docs/gulp.html" target="_blank">Learn more here</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="text-primary mb-3">Make use of the pre-defined helper classes</h6>
+                        <div class="frame-browser shadow-lg">
+                            <div class="frame-header d-flex align-items-center floatfix">
+                                <div class="col-6">
+                                    <span class="dot bg-red"></span>
+                                    <span class="dot bg-orange"></span>
+                                    <span class="dot bg-blue"></span>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <small class="text-muted">HTML</small>
+                                </div>
+                            </div>
+                            <div class="frame-body">
+                                <pre class="highlight html"><code>
+/* Add a shadow effect with just one CSS class */
+
+&lt;div&gt; class="card shadow"&gt;
+   ...
+&lt;/div&gt;
+
+/* Add a smooth button animation on hover */
+
+&lt;div&gt; class="btn btn-primary btn-translate--hover"&gt;
+   ...
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <p>Check out all the pre-defined modifier classes and see how they can help you. <a href="docs/customization.html" target="_blank">Learn more here</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slice slice-lg" id="sct_features">
+            <a href="#sct_features" class="tongue tongue-up tongue-secondary scroll-me"><i class="fas fa-angle-up"></i></a>
+            <div class="container">
+                <div class="mb-md text-center">
+                    <h3 class="h3">Really useful features</h3>
+                    <div class="fluid-paragraph text-center mt-4">
+                        <p class="lead lh-180">You get all Bootstrap components fully customized. Besides, you receive another numerous plugins out of the box and ready to use.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <div class="card bg-primary shadow">
+                            <div class="card-body py-5">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon">
+                                        <i class="fab fa-twitter text-white"></i>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h3 class="text-white h4">Latest Bootstrap framework <small>(v4.1.1)</small></h3>
+                                        <p class="text-white mb-0">We build responsive, mobile-first themes on the web with the world's most popular front-end component library called Bootstrap</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <div class="card shadow">
+                            <div class="card-body py-5">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon text-primary">
+                                        <i class="fab fa-sass"></i>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h3 class="h4">Built with Sass <small>(included)</small></h3>
+                                        <p class="mb-0">Change one variable and the theme adapts. And there are tones: colors, fonts, sizes are just a few things you can change with Sass.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <div class="card bg-primary shadow">
+                            <div class="card-body py-5">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon">
+                                        <i class="fas fa-th-large text-white"></i>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h3 class="text-white h4">100+ customized components</h3>
+                                        <p class="text-white mb-0">We took the most used Bootstrap components and add them a little Purpose touch with modular elements that makes them reusable and easy to work with.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <div class="card shadow">
+                            <div class="card-body py-5">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon text-primary">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h3 class="h4">Extended color palette</h3>
+                                        <p class="mb-0">Purpose has extended the color palette that Bootstrap offers by default. Instead of two primary colors, you get now three. These can be easily customized using the included Sass files.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <div class="card bg-primary shadow">
+                            <div class="card-body py-5">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon">
+                                        <i class="fas fa-code text-white"></i>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h3 class="text-white h4">15+ integrated plugins</h3>
+                                        <p class="text-white mb-0">Get even more functionality with the ready to use plugins we have integrated in this theme for you.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <div class="card shadow">
+                            <div class="card-body py-5">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon text-primary">
+                                        <i class="fas fa-font"></i>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h3 class="h4">Font Awesome 5</h3>
+                                        <p class="mb-0">1000 Free icons + 1500 Pro icons make FontAwesome one of the most popular vector icons on the web.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <div class="card bg-primary shadow">
+                            <div class="card-body py-5">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon">
+                                        <i class="fas fa-file-alt text-white"></i>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h3 class="text-white h4">50+ example pages</h3>
+                                        <p class="text-white mb-0">We took a step further and created a set of 50+ pages for a variety of purposes that makes it the ideal point to start building websites of any kind.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <div class="card shadow">
+                            <div class="card-body py-5">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon text-primary">
+                                        <i class="fas fa-question-circle"></i>
+                                    </div>
+                                    <div class="icon-text">
+                                        <h3 class="h4">Premium support</h3>
+                                        <p class="mb-0">Use our dedicated support email to send your issues or suggestions. We are here to help anytime: <strong>support@webpixels.io</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slice slice-lg pt-0" data-delimiter-after="1">
+            <div class="container">
+                <div class="row row-grid align-items-center justify-content-around">
+                    <div class="col-lg-5">
+                        <div class="bg-circles d-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <!-- <span></span> -->
+                        </div>
+                        <img src="assets/img/svg/static_assets.svg" class="img-center img-fluid w-75 mx-auto">
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="pr-md-4">
+                            <div class="icon icon-shape shadow rounded-circle bg-orange text-white mb-4">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <h1 class="h3">Made with the latest technologies</h1>
+                            <p class="lead">We use the latest technologies and tools in order to create a better code that not only works great, but it is easy easy to work with too.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slice slice-lg">
+            <div class="container">
+                <div class="row row-grid align-items-center justify-content-around">
+                    <div class="col-lg-5 order-lg-2">
+                        <img src="assets/img/svg/hello.svg" class="img-center img-fluid w-75">
+                    </div>
+                    <div class="col-lg-5 order-lg-1">
+                        <div class="pr-md-4">
+                            <div class="icon icon-shape shadow rounded-circle bg-yellow text-white mb-4">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <h1 class="h3">Built by developers for developers</h1>
+                            <p class="lead">We are developers too and we know exactly what you need. You don't only need a theme, but also great tools in order to ease the process. And this is exactly what we offer you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to action -->
+        <section class="slice slice-lg bg-secondary">
+            <span class="tongue tongue-top"><i class="fas fa-angle-up"></i></span>
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-8 text-center">
+                        <h3 class="h3 font-weight-400">I am ready to start a new project with <span class="font-weight-700">Purpose</span> UI Kit.</h3>
+                        <div class="mt-5">
+                            <a href="https://themes.getbootstrap.com/product/purpose-website-ui-kit/" target="_blank" class="btn btn-primary btn-circle btn-translate--hover px-4">Purchase now<span class="badge badge-pill badge-danger">$49 USD</span></a>
+                            <a href="mailto:support@webpixels.io?subject=Purpose Website UI Kit - You issue here ..." class="btn btn-link">Have an issue?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer py-5  footer-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="pr-lg-4">
+                        <h5 class="heading h6 text-uppercase font-weight-700 mb-3">Contact</h5>
+                        <ul class="list-unstyled text-small">
+                            <li class="d-flex py-2">
+                                <div>
+                                    <i class="fas fa-map-marker"></i>
+                                </div>
+                                <div>
+                                    <span class="pl-3 d-inline-block">Webpixels Studios<br>
+                      150 Southeast Pidgeon Meadow Claflin Terrace, San Francisco, US</span>
+                                </div>
+                            </li>
+                            <li class="d-flex py-2">
+                                <div>
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="pl-3 d-inline-block">+40 - 0755.222.333</span>
+                                </div>
+                            </li>
+                            <li class="d-flex py-2">
+                                <div>
+                                    <i class="fas fa-envelope-open"></i>
+                                </div>
+                                <div>
+                                    <span class="pl-3 d-inline-block">support@webpixels.io</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="heading h6 text-uppercase font-weight-700 mb-3">About us</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="py-2"><a href="#">Our company</a>
+                        </li>
+                        <li class="py-2"><a href="#">Careers</a>
+                        </li>
+                        <li class="py-2"><a href="#">Project</a>
+                        </li>
+                        <li class="py-2"><a href="#">Services</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="heading h6 text-uppercase font-weight-700 mb-3">Solutions</h5>
+                    <ul class="list-unstyled">
+                        <li class="py-2"><a href="#">Landing pages</a>
+                        </li>
+                        <li class="py-2"><a href="#">UI components</a>
+                        </li>
+                        <li class="py-2"><a href="#">Premium plugins</a>
+                        </li>
+                        <li class="py-2"><a href="#">Bootstrap themes</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="pr-lg-5">
+                        <h1 class="heading h6 text-uppercase font-weight-700 mb-3"><strong>Purpose</strong> UI Kit</h1>
+                        <ul class="list-unstyled">
+                            <li class="py-2"><a href="#">Terms and conditions</a>
+                            </li>
+                            <li class="py-2"><a href="#">Privacy policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5">
+        <div class="container">
+            <div class="align-items-center">
+                <div class="text-center">
+                    <a href="./">
+                        <img src="./assets/img/brand/icon.png" class="alpha-6 alpha-10--hover" style="width: 70px;">
+                    </a>
+                    <span class="d-block mt-4">&copy; 2018 <a href="https://webpixels.io/" class="footer-link" target="_blank">Webpixels</a>. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Core -->
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/popper/popper.min.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.min.js"></script>
+    <!-- FontAwesome 5 -->
+    <script src="./assets/vendor/fontawesome/js/fontawesome-all.min.js" defer></script>
+    <!-- Page plugins -->
+    <script src="./assets/vendor/highlight/js/highlight.min.js"></script>
+    <!-- Theme JS -->
+    <script src="./assets/js/theme.min.js"></script>
 </body>
+
 </html>

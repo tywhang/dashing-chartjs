@@ -1,0 +1,82 @@
+// Main wrapper
+
+.main {
+    position: relative;
+}
+
+// Sections
+
+section {
+    background-color: section-color("primary");
+}
+
+// Section slices 
+
+.slice {
+    position: relative;
+    padding-top: $spacer * 4;
+    padding-bottom: $spacer * 4;
+}
+
+.slice-xl {
+    padding-top: $spacer * 8;
+    padding-bottom: $spacer * 8;
+}
+
+.slice-lg {
+    padding-top: $spacer * 6;
+    padding-bottom: $spacer * 6;
+}
+
+.slice-sm {
+    padding-top: $spacer * 2;
+    padding-bottom: $spacer * 2;
+}
+
+.slice:not(.border-top):not(.border-bottom):not(.delimiter-bottom):not([class*="bg-"]) + .slice:not(.border-top):not(.border-bottom):not(.delimiter-top):not([class*="bg-"]) {
+    padding-top: 0;
+}
+
+
+//.rotated-bg-container
+.section-rotate {
+    overflow: hidden;
+
+    //rotated-bg
+    .section-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom-left-radius: 3rem;
+        padding-bottom: 10em;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .section-rotate {
+        min-height: 740px;
+
+        .section-inner { 
+            top: -30%;
+            left: -1rem;
+            width: 130%;
+            transform: rotate(-7deg);
+            background: inherit;
+            overflow: hidden;
+        }
+
+        .section-inner-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            position: relative;
+            top: -50px;
+        }
+    }
+    
+}

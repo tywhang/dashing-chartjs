@@ -1,0 +1,14 @@
+.breadcrumb-links {
+    padding: 0;
+    background-color: transparent;
+    @include border-radius(0);
+
+    .breadcrumb-item {
+	    // The separator between breadcrumbs (by default, a forward-slash: "/")
+	    +.breadcrumb-item {
+	        &::before {
+	            content: "\00bb";
+	        }
+	    }
+	}
+}

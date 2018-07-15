@@ -1,0 +1,134 @@
+.timeline {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-right: 2px dashed theme-color("primary");
+    }
+}
+
+
+.timeline-block {
+    position: relative;
+    margin: 2em 0;
+}
+
+.timeline-block:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.timeline-block:first-child {
+    margin-top: 0;
+}
+
+.timeline-block:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-axis-step {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    min-width: 18px;
+    min-height: 18px;
+    padding: 0.75rem;
+    border-radius: 50%;
+    background: $white;
+    border: 2px solid theme-color("primary");
+    text-align: center;
+    transform: translateX(-50%);
+}
+.timeline-axis-step svg,
+.timeline-axis-step i {
+    line-height: 1.4;
+}
+
+.timeline-content {
+    position: relative;
+    margin-left: 60px;
+    margin-right: 30px;
+}
+
+.timeline-body {
+    padding: 1.5rem;
+}
+
+.timeline-content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@include media-breakpoint-up(lg) { 
+    .timeline {
+        margin-top: 3em;
+        margin-bottom: 3em;
+    
+        &:before {
+            left: 50%;
+            margin-left: -2px;
+        }
+    }
+
+    .timeline-one-side{
+        &:before {
+            left: 0;
+        }
+    }
+
+    .timeline-axis-step {
+        left: 50%;
+    }
+
+    .timeline-one-side .timeline-axis-step {
+        left: 0;
+    }
+
+    .timeline-content {
+        margin-left: 0;
+        width: 38%;
+        margin: 0 5%
+    }
+
+    .timeline-body {
+        padding: 1.5rem;
+    }
+
+    .timeline-block:nth-child(even) .timeline-content {
+        float: right;
+    }
+
+    .timeline-one-side .timeline-block:nth-child(even) .timeline-content {
+        float: none;
+    }
+
+
+    // Align the timeline content next to the axis
+
+    [data-timeline-content="axis"] {
+        .timeline-content {
+            text-align: right;
+        }
+        .timeline-block:nth-child(even) .timeline-content {
+            text-align: left;
+        }
+    }
+
+
+    // Timeline axis colors
+
+    @each $color, $value in $theme-colors {
+        [data-timeline-axis-color="#{$color}"]  {
+            &:before {
+                border-color: $value;
+            }
+        }
+    }
+}
